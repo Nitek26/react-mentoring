@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from './components/MyComponent';
+import MyCreateElementComponent from './components/MyCreateElementComponent.js';
+import MyFunctionalComponent from './components/MyFunctionalComponent';
+import MyPureComponent from './components/MyPureComponent';
+
 
 function App() {
   return (
@@ -19,6 +24,11 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <MyComponent />
+      <MyFunctionalComponent />
+      <MyPureComponent />
+      {MyCreateElementComponent}
     </div>
   );
 }
