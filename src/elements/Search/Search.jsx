@@ -14,7 +14,7 @@ class Search extends React.Component {
                         FIND YOUR MOVIE
                         <div className="searchBar">
                             <input />
-                            <button>Search</button>
+                            <button>SEARCH</button>
                         </div>
                     </div>
                 </div>
