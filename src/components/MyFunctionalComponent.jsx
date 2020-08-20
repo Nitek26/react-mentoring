@@ -1,5 +1,5 @@
 import React from 'react';
 
-const myFunctionalComponent = () => <div>So functional!!!</div>;
+const MyFunctionalComponent = () => <div>So functional!!!</div>;
 
-export default myFunctionalComponent;
+export default MyFunctionalComponent;

@@ -1,0 +1,15 @@
+.movieCover {
+    margin-right: 60px;
+    margin-bottom: 40px;
+    width: 320px;
+}
+
+.genres {
+    font-size: 14px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
