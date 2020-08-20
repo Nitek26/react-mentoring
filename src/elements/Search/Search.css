@@ -21,3 +21,46 @@
     width: 90%;
     margin: 20px auto;
 }
+
+.findYourMovie {
+    font-size: 40px;
+    margin: 50px;
+}
+
+.searchBar {
+    margin-top: 30px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchBar > input {
+    background-color: #232323;
+    opacity: 0.8;
+    border: none;
+    border-radius: 10px;
+    width: calc(100% - 240px);
+    min-width: 200px;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.searchBar > button {
+    background-color: #F65261;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    /* display: block;
+    margin-top: 30px;
+    font-size: 40px;
+    background-color: #232323;
+    opacity: 0.8;
+    border: none;
+    border-radius: 10px;
+    width: 75%; */
+}

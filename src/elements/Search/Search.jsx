@@ -10,6 +10,13 @@ class Search extends React.Component {
                 </div>
                 <div className="searchContent">
                     <NetflixRouletteText />
+                    <div className="findYourMovie">
+                        FIND YOUR MOVIE
+                        <div className="searchBar">
+                            <input />
+                            <button>Search</button>
+                        </div>
+                    </div>
                 </div>
             </div>)
     }
