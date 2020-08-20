@@ -1,5 +1,6 @@
 .filterBar {
     display: flex;
+    flex-wrap: wrap;
     margin: 20px 0;
 }
 
