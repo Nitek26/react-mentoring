@@ -19,3 +19,8 @@
     flex-wrap: wrap;
     margin-top: 20px;
 }
+
+.filterAndSort {
+    margin: 20px 0;
+    width: 100%;
+}

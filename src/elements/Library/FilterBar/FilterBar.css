@@ -1,7 +1,6 @@
 .filterBar {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px 0;
+    display: inline-block;
+    width: 70%;
 }
 
 .filterBar > button {
