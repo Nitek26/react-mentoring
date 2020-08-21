@@ -4,12 +4,27 @@
     width: 320px;
 }
 
-.genres {
-    font-size: 14px;
-}
-
 img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.title {
+    margin-top: 40px;
+    display: inline-block;
+}
+
+.year {
+    border: 1px solid white;
+    border-radius: 4px;
+    font-size: 14px;
+    float: right;
+    margin-top: 40px;
+    padding: 4px 15px;
+}
+
+.genres {
+    margin-top: 10px;
+    font-size: 14px;
 }

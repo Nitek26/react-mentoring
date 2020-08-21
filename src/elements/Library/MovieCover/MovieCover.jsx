@@ -6,8 +6,9 @@ class MovieCover extends React.Component {
         return (
             <div className="movieCover">
                 <img src={this.props.movie.poster_path} />
-                <p>{this.props.movie.title}</p>
-                <p className="genres">{this.props.movie.genres.join(', ')}</p>
+                <div className="title">{this.props.movie.title}</div>
+                <div className="year">{new Date(this.props.movie.release_date).getFullYear()}</div>
+                <div className="genres">{this.props.movie.genres.join(', ')}</div>
             </div>)
     }
 }
