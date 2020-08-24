@@ -28,3 +28,10 @@ img {
     margin-top: 10px;
     font-size: 14px;
 }
+
+.movieMoreButton {
+    float: right;
+    position: relative;
+    top: 7%;
+    left: -5%;
+}
