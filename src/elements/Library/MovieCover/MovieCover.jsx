@@ -1,5 +1,6 @@
 import React from 'react';
 import './MovieCover.css'
+import PropTypes from 'prop-types';
 
 class MovieCover extends React.Component {
     render() {
@@ -12,5 +13,14 @@ class MovieCover extends React.Component {
             </div>)
     }
 }
+
+MovieCover.propTypes = {
+    movie: PropTypes.shape({
+        title: PropTypes.string,
+        release_date: PropTypes.string,
+        poster_path: PropTypes.string,
+        genres: PropTypes.array
+    })
+};
 
 export default MovieCover;

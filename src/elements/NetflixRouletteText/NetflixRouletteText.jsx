@@ -4,7 +4,7 @@ import './NetflixRouletteText.css';
 class NetflixRouletteText extends React.Component {
     render() {
         return (
-            <div class="netflixRouletteText">
+            <div className="netflixRouletteText">
                 <span className="netflix">netflix</span>
                 <span className="roulette">roulette</span>
             </div>);
