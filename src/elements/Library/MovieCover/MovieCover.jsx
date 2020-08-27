@@ -18,11 +18,11 @@ class MovieCover extends React.Component {
 
 MovieCover.propTypes = {
     movie: PropTypes.shape({
-        title: PropTypes.string,
-        release_date: PropTypes.string,
-        poster_path: PropTypes.string,
-        genres: PropTypes.array
-    }).isRequired
+        title: PropTypes.string.isRequired,
+        release_date: PropTypes.string.isRequired,
+        poster_path: PropTypes.string.isRequired,
+        genres: PropTypes.array.isRequired
+    })
 };
 
 export default MovieCover;
