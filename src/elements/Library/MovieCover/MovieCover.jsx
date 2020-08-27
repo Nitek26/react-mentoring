@@ -22,7 +22,7 @@ MovieCover.propTypes = {
         release_date: PropTypes.string,
         poster_path: PropTypes.string,
         genres: PropTypes.array
-    })
+    }).isRequired
 };
 
 export default MovieCover;
