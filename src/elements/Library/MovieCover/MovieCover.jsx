@@ -1,13 +1,15 @@
 import React from 'react';
 import './MovieCover.css'
 import PropTypes from 'prop-types';
-import MoreButton from './MoreButton/MoreButton'
+import MoreButton from './MoreButton/MoreButton';
+import OptionsPopup from './OptionsPopup/OptionsPopup';
 
 class MovieCover extends React.Component {
     render() {
         return (
             <div className="movieCover">
                 <MoreButton className="movieMoreButton"></MoreButton>
+                <OptionsPopup className="popup" />
                 <img src={this.props.movie.poster_path} />
                 <div className="title">{this.props.movie.title}</div>
                 <div className="year">{new Date(this.props.movie.release_date).getFullYear()}</div>
