@@ -5,11 +5,23 @@ import MoreButton from './MoreButton/MoreButton';
 import OptionsPopup from './OptionsPopup/OptionsPopup';
 
 class MovieCover extends React.Component {
+    state = {
+        popupVisible: false
+    }
+
+    moreClicked = () => {
+        this.setState({popupVisible: true});
+    }
+    
+    moreHidden = () => {
+        this.setState({popupVisible: false});
+    }
+
     render() {
         return (
             <div className="movieCover">
-                <MoreButton className="movieMoreButton"></MoreButton>
-                <OptionsPopup className="popup" />
+                <MoreButton className="movieMoreButton" onClick={this.moreClicked}></MoreButton>
+                {this.state.popupVisible ? <OptionsPopup className="popup" onHide={this.moreHidden} /> : null}
                 <img src={this.props.movie.poster_path} />
                 <div className="title">{this.props.movie.title}</div>
                 <div className="year">{new Date(this.props.movie.release_date).getFullYear()}</div>
