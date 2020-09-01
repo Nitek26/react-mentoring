@@ -15,14 +15,6 @@ const sortingProps = [
     {value:"title", name:"TITLE"},
 ];
 
-const sortMovies = (movieA, movieB, sortProp) => {
-    return movieA[sortProp] < movieB[sortProp] ? 1 : -1;
-}
-
-const filterMovies = (movie, filterProp) => {
-    return filterProp === null || filterProp === "all" ? true : movie.genres.find(g => g.toLowerCase() === filterProp);
-}
-
 class Library extends React.Component {
     state = {
         movies: mockedMovies,
@@ -38,9 +30,17 @@ class Library extends React.Component {
         this.setState({filterBy: filterProp});
     }
 
+    filterMovies = (movie, filterProp) => {
+        return filterProp === null || filterProp === "all" ? true : movie.genres.find(g => g.toLowerCase() === filterProp);
+    }
+
+    sortMovies = (movieA, movieB, sortProp) => {
+        return movieA[sortProp] < movieB[sortProp] ? 1 : -1;
+    }
+
     render() {
-        var filteredMovies = this.state.movies.filter((movie) => filterMovies(movie, this.state.filterBy));
-        var sortedMovies = filteredMovies.sort((a,b) => sortMovies(a, b, this.state.sortBy));
+        var filteredMovies = this.state.movies.filter((movie) => this.filterMovies(movie, this.state.filterBy));
+        var sortedMovies = filteredMovies.sort((a,b) => this.sortMovies(a, b, this.state.sortBy));
 
         return (
             <div className="library">
