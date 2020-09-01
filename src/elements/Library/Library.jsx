@@ -5,6 +5,15 @@ import mockedMovies from './mockedMovies'
 import MovieCover from './MovieCover/MovieCover'
 import SortBar from './SortBar/SortBar'
 
+const sortingProps = [
+    {value:"RELEASE DATE", name:"RELEASE DATE"},
+    {value:"VOTE AVERGAGE", name:"VOTE AVERGAGE"},
+    {value:"RUNTIME", name:"RUNTIME"},
+    {value:"BUDGET", name:"BUDGET"},
+    {value:"REVENUE", name:"REVENUE"},
+    {value:"TITLE", name:"TITLE"},
+];
+
 class Library extends React.Component {
     state = {
         movies: mockedMovies
@@ -16,7 +25,7 @@ class Library extends React.Component {
                 <div>
                     <div className="filterAndSort">
                         <FilterBar />
-                        <SortBar />
+                        <SortBar sortBy={sortingProps}/>
                     </div>
                     <div>{this.state.movies.length} movies found</div>
                     <div className="movieCovers">
