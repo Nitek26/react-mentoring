@@ -18,7 +18,7 @@ const sortingProps = [
 class Library extends React.Component {
     state = {
         movies: mockedMovies,
-        sortBy: null,
+        sortBy: sortingProps[0].value,
         filterBy: null
     }
 
