@@ -13,7 +13,6 @@
  
  .absolutePopup > button {
      float: right;
-     border: none;
      color: white;
      background-color: transparent;
      cursor: pointer;

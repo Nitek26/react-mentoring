@@ -12,9 +12,6 @@ class FilterBar extends React.Component {
     }
 
     render() {
-        console.log(this.state.selectedOption);
-        console.log(this.state.selectedOption);
-
         return (
             <div className="filterBar">
                 {this.props.filterOptions.map(option =>
