@@ -27,14 +27,14 @@
     clear: both;
 }
 
-label {
+.modal > div > label {
     color: #F65261;
     width: 80%;
     display: block;
     margin: 10px auto;
 }
 
-input {
+.modal > div > input {
     background-color: #424242;
     opacity: 0.8;
     border: none;
@@ -47,7 +47,7 @@ input {
     margin: 10px auto;
 }
 
-h1 {
+.modal > div > h1 {
     width: 80%;
     display: block;
     margin: 10px auto;
