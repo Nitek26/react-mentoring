@@ -1,0 +1,17 @@
+.moreButton {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+    color: white;
+    background-color: #232323;
+    opacity: 0.8;
+    transform: rotate(-90deg);
+    font-weight: bold;
+}
+
+.moreButton::after {
+    content: "...";
+    position: relative;
+    top: -4px;
+}

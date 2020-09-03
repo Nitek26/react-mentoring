@@ -1,0 +1,17 @@
+.sortBar {
+    font-size: 16px;
+    float: right;
+    width: 30%;
+}
+
+.sortBar > select {
+    border: none;
+    margin-left: 20px;    
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+.sortBar > select > option{
+    background-color: #232323;
+}
