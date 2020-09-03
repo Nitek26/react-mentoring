@@ -11,7 +11,6 @@
 .modal > div {
     width: 50%;
     margin: 5% auto;
-    height: 80%;
     background:rgba(23, 23, 23, 1);
     opacity: 1;
     padding: 20px;
@@ -27,11 +26,14 @@
     clear: both;
 }
 
-.modal label {
-    color: #F65261;
+.modal p {
     width: 80%;
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
+}
+
+.modal label {
+    color: #F65261;
 }
 
 .modal input {
@@ -42,7 +44,7 @@
     height: 40px;
     color: white;
     font-size: 20px;
-    width: 80%;
+    width: 100%;
     display: block;
     margin: 10px auto;
 }

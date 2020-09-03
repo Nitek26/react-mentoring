@@ -5,7 +5,7 @@ export default (props) => {
     return (
         <div className={`modal + ${props.className}`}>
             <div>
-                <button className="closeButton">X</button>
+                <button className="closeButton" onClick={props.onClose}>X</button>
                 {props.children}
             </div>
         </div>
