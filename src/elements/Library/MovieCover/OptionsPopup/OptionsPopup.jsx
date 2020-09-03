@@ -31,7 +31,9 @@ class OptionsPopup extends React.Component {
         return (
             <div className={`optionsPopup ${this.props.className}`}>
                 <div className="absolutePopup">
-                    <button onClick={this.props.onHide}>X</button>
+                    <div class="clearfix">
+                        <button onClick={this.props.onHide}>X</button>
+                    </div>
                     <p onClick={this.showEditModal}>Edit</p>
                     <p onClick={this.showDeleteModal}>Delete</p>
                 </div>

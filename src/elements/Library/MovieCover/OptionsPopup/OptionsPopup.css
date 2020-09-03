@@ -11,16 +11,17 @@
     overflow: hidden;
  }
  
- .absolutePopup > button {
-     float: right;
-     color: white;
-     background-color: transparent;
+ .absolutePopup button {
+    float: right;
+    color: white;
+    background-color: transparent;
  }
  
  .absolutePopup > p {
-     margin: 10px 0px;
-     cursor: pointer;
-     padding: 10px;
+    margin: 10px 0px;
+    cursor: pointer;
+    padding: 10px;
+    width:100%;
  }
  
  .absolutePopup > p:hover {
