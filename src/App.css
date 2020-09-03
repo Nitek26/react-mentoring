@@ -4,3 +4,11 @@
   font-size: 18px;
   color: white
 }
+
+button {
+  outline: none;
+}
+
+select {
+  outline: none;
+}

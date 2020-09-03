@@ -11,10 +11,6 @@
     font-size: 16px;
 }
 
-.filterBar > button:focus {
-    border: none;
-}
-
 .filterBar > .selectedFilter:after {
     content: "";
     display: block;
