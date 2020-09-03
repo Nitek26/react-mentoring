@@ -15,12 +15,12 @@
      float: right;
      color: white;
      background-color: transparent;
-     cursor: pointer;
  }
  
  .absolutePopup > p {
      margin: 10px 0px;
      cursor: pointer;
+     padding: 10px;
  }
  
  .absolutePopup > p:hover {
