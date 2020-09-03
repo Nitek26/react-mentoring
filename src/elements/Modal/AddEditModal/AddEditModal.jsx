@@ -4,11 +4,13 @@ import Modal from '../Modal';
 export default (props) => {
     return (
         <Modal onClose={props.onClose}>
-            <h1>EDIT MOVIE</h1>
+            {props.movie && props.movie.id ?
+            <><h1>EDIT MOVIE</h1>
             <p>
-                <label>MOVIE ID</label>
-                {props.movieId}
-            </p>
+                <label>MOVIE ID</label><br />
+                {props.movie.id}
+            </p></> :
+            <h1>ADD MOVIE</h1>}
             <p>
                 <label>TITLE</label>
                 <input type="text" value={props.title} />

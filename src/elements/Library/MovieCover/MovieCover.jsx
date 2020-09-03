@@ -21,7 +21,7 @@ class MovieCover extends React.Component {
         return (
             <div className="movieCover">
                 <MoreButton className="movieMoreButton" onClick={this.moreClicked}></MoreButton>
-                {this.state.popupVisible ? <OptionsPopup className="popup" onHide={this.moreHidden} /> : null}
+                {this.state.popupVisible ? <OptionsPopup className="popup" onHide={this.moreHidden} movie={this.props.movie}/> : null}
                 <img src={this.props.movie.poster_path} />
                 <div className="title">{this.props.movie.title}</div>
                 <div className="year">{new Date(this.props.movie.release_date).getFullYear()}</div>

@@ -35,8 +35,8 @@ class OptionsPopup extends React.Component {
                     <p onClick={this.showEditModal}>Edit</p>
                     <p onClick={this.showDeleteModal}>Delete</p>
                 </div>
-                {this.state.editModalVisible ? <AddEditModal onClose={this.closeEditModal} /> : null}
-                {this.state.deleteModalVisible ? <DeleteModal onClose={this.closeDeleteModal} /> : null}
+                {this.state.editModalVisible ? <AddEditModal onClose={this.closeEditModal} movie={this.props.movie} /> : null}
+                {this.state.deleteModalVisible ? <DeleteModal onClose={this.closeDeleteModal} movie={this.props.movie} /> : null}
             </div>);
     }
 }
