@@ -1,13 +1,28 @@
 import React from 'react';
 import './FilterBar.css';
 
-const categories = ["ALL", "DOCUMENTARY", "COMEDY", "HORROR", "CRIME"];
-
 class FilterBar extends React.Component {
+    state = {
+        selectedOption: null
+    }
+
+    selectOption = (event) => {
+        this.setState({ selectedOption: event.target.value });
+        this.props.filterCallback(event.target.value);
+    }
+
     render() {
+        console.log(this.state.selectedOption);
+        console.log(this.state.selectedOption);
+
         return (
             <div className="filterBar">
-                {categories.map(category => <button value={category.toLowerCase()} onClick={(event) => this.props.filterCallback(event.target.value)}>{category}</button>)}
+                {this.props.filterOptions.map(option =>
+                    <button
+                        className={this.state.selectedOption === option.toLowerCase() ? "selectedFilter" : null}
+                        value={option.toLowerCase()}
+                        onClick={this.selectOption}>{option}
+                    </button>)}
             </div>);
     }
 }
