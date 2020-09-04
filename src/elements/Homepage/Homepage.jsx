@@ -19,7 +19,6 @@ class Homepage extends React.Component {
                 : <Search />}
                 <Library />
                 <Footer />
-                <div id="modal" />
             </div>
         );
     }
