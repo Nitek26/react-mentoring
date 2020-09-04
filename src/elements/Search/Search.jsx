@@ -9,7 +9,6 @@ class Search extends React.Component {
     }
 
     showAddModal = () => {
-        console.log(this.state.addModalVisible);
         this.setState({ addModalVisible: true });
     }
     

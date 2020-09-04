@@ -1,8 +1,13 @@
 import React from 'react';
+import {createPortal} from 'react-dom';
 import Modal from '../Modal';
 
 export default (props) => {
-    return (
+    const domEl = document.getElementById("modal");
+  
+    if (!domEl) return null;
+
+    return createPortal(
         <Modal onClose={props.onClose}>
             <h1>DELETE MOVIE</h1>
             <p>
@@ -11,6 +16,7 @@ export default (props) => {
             <p>
                 <button className="pinkButton">CONFIRM</button>
             </p>
-        </Modal>
+        </Modal>,
+        domEl
     )
 }

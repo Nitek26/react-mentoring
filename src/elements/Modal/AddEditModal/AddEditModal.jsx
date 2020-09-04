@@ -1,8 +1,13 @@
 import React from 'react';
+import {createPortal} from 'react-dom';
 import Modal from '../Modal';
 
 export default (props) => {
-    return (
+    const domEl = document.getElementById("modal");
+  
+    if (!domEl) return null;
+
+    return createPortal(
         <Modal onClose={props.onClose}>
             {props.movie && props.movie.id ?
             <><h1>EDIT MOVIE</h1>
@@ -39,6 +44,7 @@ export default (props) => {
                 <button className="pinkButton">SAVE</button>
                 <button className="pinkBorderButton">RESET</button>
             </p>
-        </Modal>
+        </Modal>,
+        domEl
     )
 }
