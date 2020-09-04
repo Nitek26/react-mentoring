@@ -35,3 +35,9 @@ img {
     top: 7%;
     left: -5%;
 }
+
+.popup {
+    position: relative;
+    left: 50%;
+    top: 7%;
+}

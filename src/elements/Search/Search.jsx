@@ -1,9 +1,21 @@
 import React from 'react';
 import './Search.css';
 import NetflixRouletteText from './../NetflixRouletteText/NetflixRouletteText';
-import Button from './../TransparentButton/TransparentButton';
+import AddEditModal from '../Modal/AddEditModal/AddEditModal';
 
 class Search extends React.Component {
+    state = {
+        addModalVisible: false
+    }
+
+    showAddModal = () => {
+        this.setState({ addModalVisible: true });
+    }
+    
+    closeAddModal = () => {
+        this.setState({ addModalVisible: false });
+    }
+
     render() {
         return (
             <div className="search">
@@ -11,15 +23,16 @@ class Search extends React.Component {
                 </div>
                 <div className="searchContent">
                     <NetflixRouletteText className="cornerText" />
-                    <Button>+ ADD MOVIE</Button>
+                    <button onClick={this.showAddModal} className="addMovieButton">+ ADD MOVIE</button>
                     <div className="findYourMovie">
                         FIND YOUR MOVIE
                         <div className="searchBar">
                             <input placeholder="What do you want to watch?" />
-                            <button>SEARCH</button>
+                            <button className="searchButton">SEARCH</button>
                         </div>
                     </div>
                 </div>
+                {this.state.addModalVisible ? <AddEditModal onClose={this.closeAddModal} /> : null}
             </div>)
     }
 }

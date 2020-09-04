@@ -3,6 +3,7 @@ import Library from './../Library/Library';
 import Search from './../Search/Search';
 import Details from './../Details/Details';
 import Footer from './../Footer/Footer';
+import Modal from './../Modal/Modal';
 import './Homepage.css';
 
 class Homepage extends React.Component {
