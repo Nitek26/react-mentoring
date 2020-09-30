@@ -8,16 +8,21 @@ import './Homepage.css';
 
 class Homepage extends React.Component {
     state = {
-        detailsId: null
+        selectedMovie: null
+    }
+
+    onMovieSelect = (movie) => {
+        console.log("click! ", movie);
+        this.setState({selectedMovie: movie});
     }
 
     render() {
         return (
             <div className="homepage">
-                {this.state.detailsId
-                ? <Details />
+                {this.state.selectedMovie
+                ? <Details movie={this.state.selectedMovie}/>
                 : <Search />}
-                <Library />
+                <Library onMovieSelect={this.onMovieSelect}/>
                 <Footer />
             </div>
         );

@@ -1,0 +1,55 @@
+.detailsBackground {
+    background-image: url('./images/detailsBackground.jpg');
+    filter: blur(2px) brightness(30%);
+    -webkit-filter: blur(2px) brightness(30%);
+    height: 404px;
+    width: calc(100% + 4px);
+    position: relative;
+    top:-2px;
+    left:-2px;
+}
+
+.details {
+    height: 400px;
+    overflow: hidden;
+}
+
+.detailsContentWrapper {
+    position: relative;
+    top: -404px;
+    height: 100%;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.detailsContent {
+    display: flex;
+    height: 100%;
+}
+
+.detailsContentText {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailsMovieCover {
+    margin: 20px 0;
+    margin-right: 40px;
+    height: 70%;
+    display: inline-block;
+}
+
+.cornerText {
+    width: 50%;
+    display: inline-block;
+}
+
+.detailsDateAndRuntime {
+    color: #F65261;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.detailsDateAndRuntime > span {
+    margin-right: 40px;
+}

@@ -53,7 +53,7 @@ class Library extends React.Component {
                     </div>
                     <div>{sortedMovies.length} movies found</div>
                     <div className="movieCovers">
-                        {sortedMovies.map(movie => <MovieCover movie={movie} />)}
+                        {sortedMovies.map(movie => <MovieCover movie={movie} onCoverClick={this.props.onMovieSelect}/>)}
                     </div>
                 </div>
             </div>)

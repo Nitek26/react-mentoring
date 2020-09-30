@@ -4,10 +4,11 @@
     width: 320px;
 }
 
-img {
+.movieCover > img {
     width: 100%;
     height: auto;
     display: block;
+    cursor: pointer;
 }
 
 .title {
