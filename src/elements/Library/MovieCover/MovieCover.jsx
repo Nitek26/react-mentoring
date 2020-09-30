@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './MovieCover.css'
 import PropTypes from 'prop-types';
 import MoreButton from './MoreButton/MoreButton';
