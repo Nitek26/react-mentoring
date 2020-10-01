@@ -4,7 +4,6 @@ import NetflixRouletteText from './../NetflixRouletteText/NetflixRouletteText';
 
 class Details extends React.Component {
     render() {
-        console.log(this.props.movie);
         return <div className="details">
             <div className="detailsBackground">
             </div>

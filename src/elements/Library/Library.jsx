@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Library.css';
-import FilterBar from './FilterBar/FilterBar'
-import mockedMovies from './mockedMovies'
-import MovieCover from './MovieCover/MovieCover'
-import SortBar from './SortBar/SortBar'
+import FilterBar from './FilterBar/FilterBar';
+import mockedMovies from './mockedMovies';
+import MovieCover from './MovieCover/MovieCover';
+import SortBar from './SortBar/SortBar';
 
 const sortingProps = [
     { value: "release_date", name: "RELEASE DATE" },
@@ -17,47 +17,48 @@ const sortingProps = [
 
 const filterOptions = ["ALL", "DOCUMENTARY", "COMEDY", "HORROR", "CRIME"];
 
-class Library extends React.Component {
-    state = {
-        movies: mockedMovies,
-        sortBy: sortingProps[0].value,
-        filterBy: null
-    }
+export default (props) => {
+    const [movies, setMovies] = useState(null);
+    const [sortBy, setSortBy] = useState(sortingProps[0].value);
+    const [filterBy, setFilterBy] = useState(null);
 
-    sortCallback = (sortProp) => {
-        this.setState({ sortBy: sortProp });
-    }
+    const sortCallback = useCallback((sortProp) => {
+        setSortBy(sortProp);
+    });
 
-    filterCallback = (filterProp) => {
-        this.setState({ filterBy: filterProp });
-    }
+    const filterCallback = useCallback((filterProp) => {
+        setFilterBy(filterProp);
+    });
 
-    filterMovies = (movie, filterProp) => {
+    const filterMovies = (movie, filterProp) => {
         return filterProp === null || filterProp === "all" ? true : movie.genres.find(g => g.toLowerCase() === filterProp);
-    }
+    };
 
-    sortMovies = (movieA, movieB, sortProp) => {
+    const sortMovies = (movieA, movieB, sortProp) => {
         return movieA[sortProp] < movieB[sortProp] ? 1 : -1;
+    };
+
+    useEffect(() => {
+        setMovies(mockedMovies);
+    });
+    
+    if(movies){
+        var filteredMovies = movies.filter((movie) => filterMovies(movie, filterBy));
+        var sortedMovies = filteredMovies.sort((a, b) => sortMovies(a, b, sortBy));
     }
 
-    render() {
-        var filteredMovies = this.state.movies.filter((movie) => this.filterMovies(movie, this.state.filterBy));
-        var sortedMovies = filteredMovies.sort((a, b) => this.sortMovies(a, b, this.state.sortBy));
-
-        return (
-            <div className="library">
-                <div>
-                    <div className="filterAndSort">
-                        <FilterBar filterCallback={this.filterCallback} filterOptions={filterOptions} />
-                        <SortBar sortBy={sortingProps} sortCallback={this.sortCallback} />
-                    </div>
-                    <div>{sortedMovies.length} movies found</div>
-                    <div className="movieCovers">
-                        {sortedMovies.map(movie => <MovieCover movie={movie} onCoverClick={this.props.onMovieSelect}/>)}
-                    </div>
+    return (
+        <div className="library">
+            {movies ? 
+            <div>
+                <div className="filterAndSort">
+                    <FilterBar filterCallback={filterCallback} filterOptions={filterOptions} />
+                    <SortBar sortBy={sortingProps} sortCallback={sortCallback} />
                 </div>
-            </div>)
-    }
+                <div>{sortedMovies.length} movies found</div>
+                <div className="movieCovers">
+                    {sortedMovies.map(movie => <MovieCover movie={movie} onCoverClick={props.onMovieSelect}/>)}
+                </div>
+            </div> : null}
+        </div>)
 }
-
-export default Library;
