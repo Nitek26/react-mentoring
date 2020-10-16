@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Library.css';
 import FilterBar from './FilterBar/FilterBar';
-import mockedMovies from './mockedMovies';
 import MovieCover from './MovieCover/MovieCover';
 import SortBar from './SortBar/SortBar';
+import { connect } from 'react-redux';
+import { moviesLoaded } from './../../redux/actions';
+import { fetchMovies } from '../../services/moviesApi';
 
 const sortingProps = [
     { value: "release_date", name: "RELEASE DATE" },
@@ -17,8 +19,16 @@ const sortingProps = [
 
 const filterOptions = ["ALL", "DOCUMENTARY", "COMEDY", "HORROR", "CRIME"];
 
-export default (props) => {
-    const [movies, setMovies] = useState(null);
+const mapStateToProps = state =>
+({
+    movies: state.moviesReducer.movies
+});
+
+const mapDispatchToProps = dispatch => ({
+    moviesLoaded: (loadedMovies) => dispatch(moviesLoaded(loadedMovies))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(props => {
     const [sortBy, setSortBy] = useState(sortingProps[0].value);
     const [filterBy, setFilterBy] = useState(null);
 
@@ -39,26 +49,30 @@ export default (props) => {
     };
 
     useEffect(() => {
-        setMovies(mockedMovies);
-    });
-    
-    if(movies){
-        var filteredMovies = movies.filter((movie) => filterMovies(movie, filterBy));
+        async function fetchData() {
+            let movies = await fetchMovies();
+            props.moviesLoaded(movies);
+        }
+        fetchData();
+    },[]);
+
+    if (props.movies) {
+        var filteredMovies = props.movies.filter((movie) => filterMovies(movie, filterBy));
         var sortedMovies = filteredMovies.sort((a, b) => sortMovies(a, b, sortBy));
     }
-
+    
     return (
         <div className="library">
-            {movies ? 
-            <div>
-                <div className="filterAndSort">
-                    <FilterBar filterCallback={filterCallback} filterOptions={filterOptions} />
-                    <SortBar sortBy={sortingProps} sortCallback={sortCallback} />
-                </div>
-                <div>{sortedMovies.length} movies found</div>
-                <div className="movieCovers">
-                    {sortedMovies.map(movie => <MovieCover movie={movie} onCoverClick={props.onMovieSelect}/>)}
-                </div>
-            </div> : null}
+            {props.movies ?
+                <div>
+                    <div className="filterAndSort">
+                        <FilterBar filterCallback={filterCallback} filterOptions={filterOptions} />
+                        <SortBar sortBy={sortingProps} sortCallback={sortCallback} />
+                    </div>
+                    <div>{sortedMovies.length} movies found</div>
+                    <div className="movieCovers">
+                        {sortedMovies.map(movie => <MovieCover movie={movie} onCoverClick={props.onMovieSelect} />)}
+                    </div>
+                </div> : null}
         </div>)
-}
+});
